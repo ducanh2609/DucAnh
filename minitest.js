@@ -250,6 +250,35 @@ while (ques3 == true) {
             console.log(cart);
             break;
         }
+        case "U": {
+            let ykien = true;
+            while (ykien == true) {
+                let que = prompt("Nhập mặt hàng bạn muốn update:");
+                let sl = +prompt("Nhập số lượng bạn muốn update:");
+                for (let index in cart) {
+                        if (cart[index][0] == que) {
+                            cart[index][1] = sl;
+                        }
+                }
+                ykien = confirm("Bạn có muốn update tiếp không?");
+            }
+            console.log(cart);
+            break;
+        }
+        case "D": {
+            let ykien = true;
+            while (ykien == true) {
+                let que = prompt("Nhập mặt hàng bạn muốn xóa:");
+                for (let index in cart) {
+                        if (cart[index][0] == que) {
+                            cart.splice(index,1);
+                        }
+                }
+                ykien = confirm("Bạn có muốn xóa tiếp không?");
+            }
+            console.log(cart);
+            break;
+        }
     }
     ques3 = confirm("Bạn có muốn làm tác vụ khác không? (Y/N):");
     if (ques3 == false) {
